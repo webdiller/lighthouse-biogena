@@ -33,39 +33,47 @@
           <p class="tab-form__main-title">Консультация нутрициолога Biogena</p>
           <div class="tab-form__form-wrapper"> 
             <div class="tab-form__tabs"> 
-              <button class="tab-form__tab" data-tab-id="1">Заказать звонок</button>
-              <button class="tab-form__tab active" data-tab-id="2">Задайте ваш вопрос</button>
+              <button class="tab-form__tab active" data-tab-id="1">Заказать звонок</button>
+              <button class="tab-form__tab" data-tab-id="2">Задайте ваш вопрос</button>
             </div>
             <div class="tab-form__views"> 
               <div class="tab-form__view active" data-view-id="1">
                 <div class="tab-form__view-wrapper">
                   <p class="tab-form__title">Получить консультацию по телефону</p>
                   <p class="tab-form__description">
-                     Экспресс-консультация эксперта доступна бесплатно для всех посетителей нашего <br>интернет-магазина. Вы можете задать любой вопрос, касающийся приема <br>биодобавок, витаминов и минералов. Например, как правильно выбрать кальций, <br>в какой дозировке или как можно сочетать один продукт с другим. <br><br>Для записи на консультацию заполните форму заявки ниже, указав в сообщении<br>желаемое время звонка специалиста, ваш вопрос и, при необходимости, ссылки на <br>выбранные продукты.<br><br><strong>Консультация нутрициолога возможна по будням с 9:30 до 17:30. </strong><br><strong>Продолжительность - 15 минут. </strong></p>
-                  <div class="tab-form__form">
+                     Экспресс-консультация эксперта доступна бесплатно для всех посетителей нашего 
+                    интернет-магазина. Вы можете задать любой вопрос, касающийся приема 
+                    биодобавок, витаминов и минералов. Например, как правильно выбрать кальций, 
+                    в какой дозировке или как можно сочетать один продукт с другим. <br><br>Для записи на консультацию заполните форму заявки ниже, указав в сообщении
+                    желаемое время звонка специалиста, ваш вопрос и, при необходимости, ссылки на 
+                    выбранные продукты.<br><br><strong>Консультация нутрициолога возможна по будням с 9:30 до 17:30. </strong><br><strong>Продолжительность - 15 минут. </strong>
+                  </p>
+                  <form class="tab-form__form">
                     <input class="tab-form__input" placeholder="Ваше имя">
-                    <input class="tab-form__input" placeholder="Номер телефона*" type="tel" id="phone" required minlength="6" maxlength="12">
-                    <textarea class="tab-form__textarea" placeholder="Напишите ваш вопрос*" required></textarea>
+                    <input class="tab-form__input" placeholder="Номер телефона*" type="tel" id="phone" required minlength="6" maxlength="12" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)">
+                    <textarea class="tab-form__textarea" placeholder="Напишите ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий"></textarea>
+                    <div class="tab-form__errors"></div>
                     <div class="tab-form__footer">
                       <div class="tab-form__footer-agree"><img class="tab-form__agree-icon" src="./img/svg/icon-agree.svg" alt="icon-agree"><a class="tab-form__agree-link">Согласен с условиями обработки <strong>персональных данных.</strong></a></div>
-                      <button class="tab-form__footer-btn">Записаться на консультацию</button>
+                      <button class="tab-form__footer-btn" type="button">Записаться на консультацию</button>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div>
               <div class="tab-form__view" data-view-id="2">
                 <div class="tab-form__view-wrapper">
                   <p class="tab-form__title">Получить консультацию по электронной почте</p>
                   <p class="tab-form__description">Вы можете задать любой интересующий вас вопрос по продуктам или работе магазина. Наш консультант-нутрициолог обязательно вам поможет и пришлёт ответ на электронную почту.</p>
-                  <div class="tab-form__form">
+                  <form class="tab-form__form">
                     <input class="tab-form__input" placeholder="Ваше имя">
-                    <input class="tab-form__input" placeholder="Введите e-mail*" type="text" required minlength="1" maxlength="100">
-                    <textarea class="tab-form__textarea" placeholder="Напишите ваш вопрос*" required></textarea>
+                    <input class="tab-form__input" placeholder="Введите e-mail*" type="text" required minlength="1" maxlength="100" data-requiredErrorMessage="Пожалуйста, введите корректный формат вашего e-mail (например, example@gmail.com)">
+                    <textarea class="tab-form__textarea" placeholder="Напишите ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий"></textarea>
+                    <div class="tab-form__errors"></div>
                     <div class="tab-form__footer">
                       <div class="tab-form__footer-agree"><img class="tab-form__agree-icon" src="./img/svg/icon-agree.svg" alt="icon-agree"><a class="tab-form__agree-link">Согласен с условиями обработки <strong>персональных данных.</strong></a></div>
-                      <button class="tab-form__footer-btn">Записаться на консультацию</button>
+                      <button class="tab-form__footer-btn" type="button">Записаться на консультацию</button>
                     </div>
-                  </div>
+                  </form>
                 </div>
               </div><img class="tab-form__bg-image active" data-tab-image src="./img/tab-bg-image.png" alt="tab-bg-image">
             </div>

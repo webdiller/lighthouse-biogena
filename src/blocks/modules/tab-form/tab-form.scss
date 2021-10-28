@@ -111,14 +111,19 @@
   }
 
   &__description {
+    max-width: 612px;
     margin-bottom: 19px;
     font-size: 16px;
     line-height: 26px;
     color: #333333;
-    font-weight: 400;
+    font-weight: 300;
     strong {
       color: #333333;
       font-weight: 500;
+      @include media("<=576px") {
+        display: inline-block;
+        max-width: 200px;
+      }
     }
     @include media("<=576px") {
       font-size: 15px;
@@ -235,6 +240,27 @@
     @include media("<=576px") {
       margin-top: 13px;
       display: block;
+    }
+  }
+
+  &__errors {
+    margin-top: 19px;
+    @include media("<=576px") {
+      margin-top: 12px;
+    }
+  }
+
+  &__error {
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    color: #d03636;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    @include media("<=576px") {
+      font-size: 11px;
+      line-height: 16px;
     }
   }
 

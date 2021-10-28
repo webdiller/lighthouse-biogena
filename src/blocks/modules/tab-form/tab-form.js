@@ -2,6 +2,7 @@ const tabForm = document.querySelector(".js-tab-form");
 const tabs = tabForm.querySelectorAll("[data-tab-id]");
 const views = tabForm.querySelectorAll("[data-view-id]");
 const bgImage = tabForm.querySelector("[data-tab-image]");
+const forms = tabForm.querySelectorAll("form");
 let inputTel = document.querySelector("#phone");
 
 try {
@@ -29,3 +30,32 @@ try {
     customContainer: "tab-form__input-wrapper",
   });
 } catch (error) {}
+
+try {
+  if (forms.length > 0) {
+    forms.forEach((form) => {
+      const requriredElements = form.querySelectorAll("[required]");
+      const submitBtn = form.querySelector("button[type='button']");
+      const errorsElement = form.querySelector('.tab-form__errors');
+
+      submitBtn.addEventListener("click", function (e) {
+        errorsElement.innerHTML = '';
+        requriredElements.forEach((field) => {
+          if (field.hasAttribute("required")) {
+            if (!field.checkValidity()) {
+              const errorHTML = `<small class="tab-form__error">${field.dataset.requirederrormessage}</small>`;
+              errorsElement.insertAdjacentHTML("beforeend", errorHTML);
+            }
+          }
+        });
+      });
+    });
+  }
+} catch (error) {}
+
+/**
+ * Нажимаем submit
+ * Если в форме есть обязательные поля и если у они не прошли валидацию, то
+ * Собираем все элементы полей, вытаскиваем аттрибуты и создаем html код в ошибке
+ * Повторяем нажатие submit, проверяем, если ок, удаляем ошибки, если опять есть ошибки
+ */
