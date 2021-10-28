@@ -156,6 +156,10 @@
     outline: none;
     border-radius: 6px;
 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
     font-size: 16px;
     line-height: 20px;
     color: #787878;
@@ -209,6 +213,10 @@
     padding-bottom: 19px;
     padding-left: 28px;
     padding-right: 28px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 
     min-height: 175px;
     outline: none;
