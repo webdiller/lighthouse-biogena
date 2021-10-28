@@ -1,0 +1,325 @@
+.tab-form {
+  &__container {
+    max-width: 1170px;
+    margin: 0 auto;
+    margin-bottom: 126px;
+  }
+
+  &__main-title {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+    margin-bottom: 62px;
+    text-align: center;
+    color: #333333;
+    @include media("<768px") {
+      margin-bottom: 32px;
+      font-size: 28px;
+      line-height: 30px;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    border-radius: 4px;
+
+    border: 1px solid #e7eef2;
+    filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.1));
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    outline: none;
+
+    flex: 1 1 50%;
+    height: 125px;
+    font-size: 22px;
+    line-height: 28px;
+    color: #333333;
+    border: 1px solid transparent;
+
+    transition: all 0.3s ease;
+    &:hover,
+    &:focus {
+      background-color: rgba(231, 238, 242, 0.5);
+    }
+
+    @include media("<=991px") {
+      height: 90px;
+    }
+
+    @include media("<768px") {
+      height: 83px;
+    }
+
+    @include media("<576px") {
+      font-size: 15px;
+      line-height: 19px;
+    }
+
+    &.active {
+      background: #e7eef2;
+      border-color: #e7eef2;
+    }
+  }
+
+  &__views {
+    position: relative;
+    top: -1px;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    @include media("<=768px") {
+      overflow: hidden;
+    }
+  }
+
+  &__view {
+    display: none;
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__view-wrapper {
+    max-width: 612px;
+    padding: 75px 90px 50px;
+    box-sizing: content-box;
+    @include media("<=768px") {
+      max-width: unset;
+      padding: 40px 25px 315px 25px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 11px;
+    font-size: 25px;
+    line-height: 36px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: #333333;
+    @include media("<=576px") {
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 19px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #333333;
+    font-weight: 400;
+    strong {
+      color: #333333;
+      font-weight: 500;
+    }
+    @include media("<=576px") {
+      font-size: 15px;
+      line-height: 26px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+
+    &:focus-within {
+      input[required]:invalid,
+      textarea[required]:invalid {
+        border-color: #ea4e25;
+      }
+    }
+
+    @include media("<=576px") {
+      display: block;
+    }
+  }
+
+  &__input {
+    flex: 1 1 auto;
+    height: 60px;
+
+    border: 1px solid #dadada;
+    outline: none;
+    border-radius: 6px;
+
+    font-size: 16px;
+    line-height: 20px;
+    color: #787878;
+    padding-left: 28px;
+    padding-right: 28px;
+    transition: all 0.3s ease;
+    &-wrapper {
+      flex: 1 1 auto;
+      @include media("<=576px") {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 100%;
+      }
+    }
+    &:focus {
+      border-color: #277792;
+    }
+    @include media("<=576px") {
+      margin-bottom: 10px;
+      font-size: 15px;
+      line-height: 19px;
+      width: 100%;
+    }
+    &::placeholder {
+      font-size: 16px;
+      line-height: 20px;
+      color: #787878;
+      @include media("<=576px") {
+        font-size: 15px;
+        line-height: 19px;
+      }
+    }
+    &:first-child {
+      margin-right: 16px;
+      @include media("<=576px") {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__textarea {
+    flex: 1 1 100%;
+    margin-top: 12px;
+
+    border: 1px solid #dadada;
+    border-radius: 6px;
+
+    padding-top: 19px;
+    padding-bottom: 19px;
+    padding-left: 28px;
+    padding-right: 28px;
+
+    min-height: 175px;
+    outline: none;
+    font-size: 16px;
+    line-height: 20px;
+    color: #787878;
+    padding-left: 28px;
+    padding-right: 28px;
+    transition: all 0.3s ease;
+    &:focus {
+      border-color: #277792;
+    }
+    @include media("<=576px") {
+      margin-top: 0;
+      width: 100%;
+    }
+    &::placeholder {
+      font-size: 16px;
+      line-height: 20px;
+      color: #787878;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 19px;
+    @include media("<=576px") {
+      margin-top: 13px;
+      display: block;
+    }
+  }
+
+  &__footer-agree {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 15px;
+    color: #333333;
+    margin-right: auto;
+    @include media("<=576px") {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__agree-icon {
+    margin-right: 6px;
+  }
+
+  &__agree-link {
+    text-decoration: none;
+    strong {
+      font-weight: 400;
+      text-decoration: underline;
+      text-decoration-color: #5890a9;
+      color: #5890a9;
+    }
+    &:hover {
+      strong {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__footer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 60px;
+    font-size: 15px;
+    line-height: 19px;
+    color: #333333;
+
+    background: #ffffff;
+    border: 1px solid #333333;
+    box-sizing: border-box;
+    border-radius: 30.5px;
+    transition: all 0.3s ease;
+    &:hover,
+    &:focus {
+      background-color: #333;
+      color: #fff;
+    }
+    @include media("<=576px") {
+      width: 100%;
+    }
+  }
+
+  &__bg-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 90%;
+    transition: all 0.5s ease;
+    opacity: 0;
+    @include media("<=991px") {
+      height: auto;
+      width: 20%;
+      bottom: unset;
+      top: 50px;
+    }
+    @include media("<=768px") {
+      height: auto;
+      width: 217px;
+      bottom: -135px;
+      top: unset;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.active {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+extends layouts/default
+include helpers/mixins
+
+block variables
+	- const title = "gulp-pug-starter"
+
+block content
+	main.main
+		include ../blocks/modules/tab-form/tab-form
+
+block scripts
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js" integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA==" crossorigin="anonymous" referrerpolicy="no-referrer")
+	script(src="js/main.js")
+	

@@ -1,0 +1,58 @@
+.tab-form.js-tab-form
+    .tab-form__container
+        p.tab-form__main-title Консультация нутрициолога Biogena
+        .tab-form__form-wrapper 
+            .tab-form__tabs 
+                button(data-tab-id="1").tab-form__tab Заказать звонок
+                button(data-tab-id="2").tab-form__tab.active Задайте ваш вопрос
+            .tab-form__views 
+
+                .tab-form__view(data-view-id="1").active
+                    .tab-form__view-wrapper
+                        p.tab-form__title Получить консультацию по телефону
+                        p.tab-form__description 
+                            | Экспресс-консультация эксперта доступна бесплатно для всех посетителей нашего 
+                            br 
+                            | интернет-магазина. Вы можете задать любой вопрос, касающийся приема 
+                            br 
+                            | биодобавок, витаминов и минералов. Например, как правильно выбрать кальций, 
+                            br 
+                            | в какой дозировке или как можно сочетать один продукт с другим. 
+                            br 
+                            br 
+                            | Для записи на консультацию заполните форму заявки ниже, указав в сообщении
+                            br 
+                            | желаемое время звонка специалиста, ваш вопрос и, при необходимости, ссылки на 
+                            br 
+                            | выбранные продукты.
+                            br 
+                            br 
+                            | #[strong Консультация нутрициолога возможна по будням с 9:30 до 17:30. ]
+                            br 
+                            | #[strong Продолжительность - 15 минут. ]
+                        .tab-form__form
+                            input.tab-form__input(placeholder="Ваше имя")
+                            input.tab-form__input(placeholder="Номер телефона*" type="tel" id="phone" required minlength="6" maxlength="12")
+                            textarea.tab-form__textarea(placeholder="Напишите ваш вопрос*" required)
+                            .tab-form__footer
+                                .tab-form__footer-agree
+                                    img.tab-form__agree-icon(src='./img/svg/icon-agree.svg' alt='icon-agree')
+                                    a.tab-form__agree-link Согласен с условиями обработки #[strong персональных данных.]
+                                button.tab-form__footer-btn Записаться на консультацию
+
+                .tab-form__view(data-view-id="2")
+                    .tab-form__view-wrapper
+                        p.tab-form__title Получить консультацию по электронной почте
+                        p.tab-form__description Вы можете задать любой интересующий вас вопрос по продуктам или работе магазина. Наш консультант-нутрициолог обязательно вам поможет и пришлёт ответ на электронную почту.
+                        .tab-form__form
+                            input.tab-form__input(placeholder="Ваше имя")
+                            input.tab-form__input(placeholder="Введите e-mail*" type="text" required minlength="1" maxlength="100")
+                            textarea.tab-form__textarea(placeholder="Напишите ваш вопрос*" required)
+                            .tab-form__footer
+                                .tab-form__footer-agree
+                                    img.tab-form__agree-icon(src='./img/svg/icon-agree.svg' alt='icon-agree')
+                                    a.tab-form__agree-link Согласен с условиями обработки #[strong персональных данных.]
+                                button.tab-form__footer-btn Записаться на консультацию
+            
+            
+                img.tab-form__bg-image.active(data-tab-image src='./img/tab-bg-image.png' alt='tab-bg-image')

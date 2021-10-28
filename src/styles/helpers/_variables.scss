@@ -1,0 +1,15 @@
+$breakpoints: (
+  "smPhone": 480px, // макет 480 
+  "phone": 768px, // макет 480 
+  "tablet": 991px, // макет 768 
+  "desktop": 1200px, // макет 1024
+) !default;
+
+$accent: #F4830A;
+$accentHover: #F7A853;
+$accentFocus: #FBCD9D;
+
+$brown: #3E1D1D;
+
+$lightGrey: #CCCCCC;
+$grey: #757575;
