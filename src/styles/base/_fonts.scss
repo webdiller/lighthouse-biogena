@@ -1,26 +1,28 @@
 @font-face {
-  font-family: "DIN Pro";
-  src: url("../fonts/DinPro/DINPro-Light.woff2") format("woff2"),
-    url("../fonts/DinPro/DINPro-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'DINProDev';
+	src: local('DIN Pro Light'), local('DINPro-Light'),
+		url('../fonts/DinPro/DINPro-Light.woff') format('woff'),
+		url("../fonts/DinPro/DinPro-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: "DIN Pro";
-  src: url("../fonts/DinPro/DINPro.woff2") format("woff2"),
-    url("../fonts/DinPro/DINPro.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'DINProDev';
+	src: local('DIN Pro'), local('DINPro'),
+		url('../fonts/DinPro/DINPro.woff') format('woff'),
+		url("../fonts/DinPro/DinPro.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "DIN Pro";
-  src: url("../fonts/DinPro/DinPro-Medium.woff2") format("woff2"),
-    url("../fonts/DinPro/DinPro-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  font-family: 'DINProDev';
+	src: local('DIN Pro Medium'), local('DINPro-Medium'),
+		url('../fonts/DinPro/DINPro-Medium.woff') format('woff'),
+		url("../fonts/DinPro/DinPro-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
