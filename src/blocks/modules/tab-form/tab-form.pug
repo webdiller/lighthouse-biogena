@@ -27,14 +27,17 @@
                             | #[strong Продолжительность - 15 минут. ]
                         form.tab-form__form
                             input.tab-form__input(placeholder="Ваше имя")
-                            input.tab-form__input(placeholder="Номер телефона*" type="tel" id="phone" required minlength="6" maxlength="12" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)")
-                            textarea.tab-form__textarea(placeholder="Напишите ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий")
+                            input.tab-form__input(placeholder="Номер телефона*" type="tel" id="phone" required minlength="12" maxlength="12" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)")
+                            textarea.tab-form__textarea(placeholder="Напишите желаемое время звонка и ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий")
                             .tab-form__errors
                             .tab-form__footer
                                 .tab-form__footer-agree
-                                    img.tab-form__agree-icon(src='./img/svg/icon-agree.svg' alt='icon-agree')
-                                    a.tab-form__agree-link Согласен с условиями обработки #[strong персональных данных.]
-                                button.tab-form__footer-btn(type="button") Записаться на консультацию
+                                    button(data-type="custom-checkbox" type="button").tab-form__agree.active
+                                        span.tab-form__agree-icon-wrapper
+                                            img.tab-form__agree-icon(src='./img/svg/icon-checkbox.svg' alt='icon-agree')
+                                        span.tab-form__agree-rule Согласен с условиями   
+                                    a(href="http://biogena.fvds.ru/privacy/").tab-form__agree-link обработки персональных данных.
+                                button.tab-form__footer-btn(type="submit") Задать ваш вопрос
 
                 .tab-form__view(data-view-id="2")
                     .tab-form__view-wrapper
@@ -42,14 +45,17 @@
                         p.tab-form__description Вы можете задать любой интересующий вас вопрос по продуктам или работе магазина. Наш консультант-нутрициолог обязательно вам поможет и пришлёт ответ на электронную почту.
                         form.tab-form__form
                             input.tab-form__input(placeholder="Ваше имя")
-                            input.tab-form__input(placeholder="Введите e-mail*" type="text" required minlength="1" maxlength="100" data-requiredErrorMessage="Пожалуйста, введите корректный формат вашего e-mail (например, example@gmail.com)")
-                            textarea.tab-form__textarea(placeholder="Напишите ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий")
+                            input.tab-form__input(placeholder="Введите e-mail*" type="email" required minlength="1" maxlength="100" data-checkValidationMessage="Адрес элктронной почты должен сожержать символ '@'. В данном адресе отсутствует символ '@'" data-requiredErrorMessage="Пожалуйста, введите корректный формат вашего e-mail (например, example@gmail.com)")
+                            textarea.tab-form__textarea(placeholder="Напишите ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий*")
                             .tab-form__errors
                             .tab-form__footer
                                 .tab-form__footer-agree
-                                    img.tab-form__agree-icon(src='./img/svg/icon-agree.svg' alt='icon-agree')
-                                    a.tab-form__agree-link Согласен с условиями обработки #[strong персональных данных.]
-                                button.tab-form__footer-btn(type="button") Записаться на консультацию
+                                    button(data-type="custom-checkbox" type="button").tab-form__agree.active
+                                        span.tab-form__agree-icon-wrapper
+                                            img.tab-form__agree-icon(src='./img/svg/icon-checkbox.svg' alt='icon-agree')
+                                        span.tab-form__agree-rule Согласен с условиями   
+                                    a(href="http://biogena.fvds.ru/privacy/").tab-form__agree-link обработки персональных данных.
+                                button.tab-form__footer-btn(type="submit") Записаться на консультацию
             
             
                 img.tab-form__bg-image.active(data-tab-image src='./img/tab-bg-image.png' alt='tab-bg-image')

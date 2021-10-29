@@ -50,12 +50,14 @@
                   </p>
                   <form class="tab-form__form">
                     <input class="tab-form__input" placeholder="Ваше имя">
-                    <input class="tab-form__input" placeholder="Номер телефона*" type="tel" id="phone" required minlength="6" maxlength="12" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)">
-                    <textarea class="tab-form__textarea" placeholder="Напишите ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий"></textarea>
+                    <input class="tab-form__input" placeholder="Номер телефона*" type="tel" id="phone" required minlength="12" maxlength="12" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)">
+                    <textarea class="tab-form__textarea" placeholder="Напишите желаемое время звонка и ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий"></textarea>
                     <div class="tab-form__errors"></div>
                     <div class="tab-form__footer">
-                      <div class="tab-form__footer-agree"><img class="tab-form__agree-icon" src="./img/svg/icon-agree.svg" alt="icon-agree"><a class="tab-form__agree-link">Согласен с условиями обработки <strong>персональных данных.</strong></a></div>
-                      <button class="tab-form__footer-btn" type="button">Записаться на консультацию</button>
+                      <div class="tab-form__footer-agree">
+                        <button class="tab-form__agree active" data-type="custom-checkbox" type="button"><span class="tab-form__agree-icon-wrapper"><img class="tab-form__agree-icon" src="./img/svg/icon-checkbox.svg" alt="icon-agree"></span><span class="tab-form__agree-rule">Согласен с условиями   </span></button><a class="tab-form__agree-link" href="http://biogena.fvds.ru/privacy/">обработки персональных данных.</a>
+                      </div>
+                      <button class="tab-form__footer-btn" type="submit">Задать ваш вопрос</button>
                     </div>
                   </form>
                 </div>
@@ -66,12 +68,14 @@
                   <p class="tab-form__description">Вы можете задать любой интересующий вас вопрос по продуктам или работе магазина. Наш консультант-нутрициолог обязательно вам поможет и пришлёт ответ на электронную почту.</p>
                   <form class="tab-form__form">
                     <input class="tab-form__input" placeholder="Ваше имя">
-                    <input class="tab-form__input" placeholder="Введите e-mail*" type="text" required minlength="1" maxlength="100" data-requiredErrorMessage="Пожалуйста, введите корректный формат вашего e-mail (например, example@gmail.com)">
-                    <textarea class="tab-form__textarea" placeholder="Напишите ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий"></textarea>
+                    <input class="tab-form__input" placeholder="Введите e-mail*" type="email" required minlength="1" maxlength="100" data-checkValidationMessage="Адрес элктронной почты должен сожержать символ '@'. В данном адресе отсутствует символ '@'" data-requiredErrorMessage="Пожалуйста, введите корректный формат вашего e-mail (например, example@gmail.com)">
+                    <textarea class="tab-form__textarea" placeholder="Напишите ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий*"></textarea>
                     <div class="tab-form__errors"></div>
                     <div class="tab-form__footer">
-                      <div class="tab-form__footer-agree"><img class="tab-form__agree-icon" src="./img/svg/icon-agree.svg" alt="icon-agree"><a class="tab-form__agree-link">Согласен с условиями обработки <strong>персональных данных.</strong></a></div>
-                      <button class="tab-form__footer-btn" type="button">Записаться на консультацию</button>
+                      <div class="tab-form__footer-agree">
+                        <button class="tab-form__agree active" data-type="custom-checkbox" type="button"><span class="tab-form__agree-icon-wrapper"><img class="tab-form__agree-icon" src="./img/svg/icon-checkbox.svg" alt="icon-agree"></span><span class="tab-form__agree-rule">Согласен с условиями   </span></button><a class="tab-form__agree-link" href="http://biogena.fvds.ru/privacy/">обработки персональных данных.</a>
+                      </div>
+                      <button class="tab-form__footer-btn" type="submit">Записаться на консультацию</button>
                     </div>
                   </form>
                 </div>

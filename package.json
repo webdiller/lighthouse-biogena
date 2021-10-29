@@ -66,6 +66,7 @@
         "yargs": "~15.4.1"
     },
     "dependencies": {
+        "intl-tel-input": "^17.0.13",
         "jquery": "^3.6.0",
         "smart-grid": "^2.1.2",
         "swiper": "^7.0.9"

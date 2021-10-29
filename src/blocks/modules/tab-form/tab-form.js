@@ -3,7 +3,31 @@ const tabs = tabForm.querySelectorAll("[data-tab-id]");
 const views = tabForm.querySelectorAll("[data-view-id]");
 const bgImage = tabForm.querySelector("[data-tab-image]");
 const forms = tabForm.querySelectorAll("form");
+const customCheckboxes = tabForm.querySelectorAll(
+  "[data-type='custom-checkbox']"
+);
 let inputTel = document.querySelector("#phone");
+
+try {
+  if (customCheckboxes.length > 0) {
+    customCheckboxes.forEach((el) => {
+      el.addEventListener("click", function (e) {
+        e.target.classList.toggle("active");
+        if (e.target.classList.contains("active")) {
+          e.target.parentElement.parentElement
+            .querySelector('button[type="submit"')
+            .parentElement.parentElement.querySelector('button[type="submit"')
+            .removeAttribute("disabled");
+        } else {
+          e.target.parentElement.parentElement
+            .querySelector('button[type="submit"')
+            .parentElement.parentElement.querySelector('button[type="submit"')
+            .setAttribute("disabled", true);
+        }
+      });
+    });
+  }
+} catch (error) {}
 
 try {
   if (tabs.length > 0 && views.length > 0) {
@@ -28,6 +52,7 @@ try {
 
   window.intlTelInput(inputTel, {
     customContainer: "tab-form__input-wrapper",
+    preferredCountries: ["ru", "by", "kz"],
   });
 } catch (error) {}
 
@@ -35,17 +60,34 @@ try {
   if (forms.length > 0) {
     forms.forEach((form) => {
       const requriredElements = form.querySelectorAll("[required]");
-      const submitBtn = form.querySelector("button[type='button']");
-      const errorsElement = form.querySelector('.tab-form__errors');
+      const submitBtn = form.querySelector("button[type='submit']");
+      const errorsElement = form.querySelector(".tab-form__errors");
+
+      form.addEventListener("input", function (e) {
+        errorsElement.innerHTML = "";
+        requriredElements.forEach((field) => {
+          if (
+            field.hasAttribute("required") &&
+            field.hasAttribute("data-requiredErrorMessage") &&
+            !field.checkValidity()
+          ) {
+            const errorHTML = `<small class="tab-form__error">${field.dataset.requirederrormessage}</small>`;
+            errorsElement.insertAdjacentHTML("beforeend", errorHTML);
+          }
+        });
+      });
 
       submitBtn.addEventListener("click", function (e) {
-        errorsElement.innerHTML = '';
         requriredElements.forEach((field) => {
-          if (field.hasAttribute("required")) {
-            if (!field.checkValidity()) {
-              const errorHTML = `<small class="tab-form__error">${field.dataset.requirederrormessage}</small>`;
-              errorsElement.insertAdjacentHTML("beforeend", errorHTML);
-            }
+          if (
+            field.hasAttribute("required") &&
+            !field.hasAttribute("data-intl-tel-input-id") &&
+            field.hasAttribute("data-checkValidationMessage") &&
+            !field.checkValidity()
+          ) {
+            field.setCustomValidity(
+              field.getAttribute("data-checkValidationMessage")
+            );
           }
         });
       });

@@ -98,7 +98,24 @@ var tabs = tabForm.querySelectorAll("[data-tab-id]");
 var views = tabForm.querySelectorAll("[data-view-id]");
 var bgImage = tabForm.querySelector("[data-tab-image]");
 var forms = tabForm.querySelectorAll("form");
+var customCheckboxes = tabForm.querySelectorAll("[data-type='custom-checkbox']");
 var inputTel = document.querySelector("#phone");
+
+try {
+  if (customCheckboxes.length > 0) {
+    customCheckboxes.forEach(function (el) {
+      el.addEventListener("click", function (e) {
+        e.target.classList.toggle("active");
+
+        if (e.target.classList.contains("active")) {
+          e.target.parentElement.parentElement.querySelector('button[type="submit"').parentElement.parentElement.querySelector('button[type="submit"').removeAttribute("disabled");
+        } else {
+          e.target.parentElement.parentElement.querySelector('button[type="submit"').parentElement.parentElement.querySelector('button[type="submit"').setAttribute("disabled", true);
+        }
+      });
+    });
+  }
+} catch (error) {}
 
 try {
   if (tabs.length > 0 && views.length > 0) {
@@ -125,7 +142,8 @@ try {
     }
   });
   window.intlTelInput(inputTel, {
-    customContainer: "tab-form__input-wrapper"
+    customContainer: "tab-form__input-wrapper",
+    preferredCountries: ["ru", "by", "kz"]
   });
 } catch (error) {}
 
@@ -133,16 +151,21 @@ try {
   if (forms.length > 0) {
     forms.forEach(function (form) {
       var requriredElements = form.querySelectorAll("[required]");
-      var submitBtn = form.querySelector("button[type='button']");
-      var errorsElement = form.querySelector('.tab-form__errors');
-      submitBtn.addEventListener("click", function (e) {
-        errorsElement.innerHTML = '';
+      var submitBtn = form.querySelector("button[type='submit']");
+      var errorsElement = form.querySelector(".tab-form__errors");
+      form.addEventListener("input", function (e) {
+        errorsElement.innerHTML = "";
         requriredElements.forEach(function (field) {
-          if (field.hasAttribute("required")) {
-            if (!field.checkValidity()) {
-              var errorHTML = "<small class=\"tab-form__error\">".concat(field.dataset.requirederrormessage, "</small>");
-              errorsElement.insertAdjacentHTML("beforeend", errorHTML);
-            }
+          if (field.hasAttribute("required") && field.hasAttribute("data-requiredErrorMessage") && !field.checkValidity()) {
+            var errorHTML = "<small class=\"tab-form__error\">".concat(field.dataset.requirederrormessage, "</small>");
+            errorsElement.insertAdjacentHTML("beforeend", errorHTML);
+          }
+        });
+      });
+      submitBtn.addEventListener("click", function (e) {
+        requriredElements.forEach(function (field) {
+          if (field.hasAttribute("required") && !field.hasAttribute("data-intl-tel-input-id") && field.hasAttribute("data-checkValidationMessage") && !field.checkValidity()) {
+            field.setCustomValidity(field.getAttribute("data-checkValidationMessage"));
           }
         });
       });
