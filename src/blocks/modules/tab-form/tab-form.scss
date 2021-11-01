@@ -68,17 +68,18 @@
   }
 
   &__views {
-    position: relative;
     top: -1px;
     background: #ffffff;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+    overflow: hidden;
     @include media("<=768px") {
       overflow: hidden;
     }
   }
 
   &__view {
+    position: relative;
     display: none;
     &.active {
       display: flex;
@@ -366,15 +367,26 @@
     @include media("<=576px") {
       width: 100%;
     }
+    &_1 {
+      min-width: 265px;
+      @include media("<=991px") {
+        min-width: unset;
+      }
+    }
+    &_2 {
+      min-width: 248px;
+      @include media("<=991px") {
+        min-width: unset;
+      }
+    }
   }
 
   &__bg-image {
     position: absolute;
     right: 0;
-    bottom: 0;
-    height: 90%;
+    top: 157px;
+    height: 753px;
     transition: all 0.5s ease;
-    opacity: 0;
     @include media("<=991px") {
       height: auto;
       width: 20%;
@@ -389,8 +401,12 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    &.active {
-      opacity: 1;
+
+    &_1 {
+    }
+    &_2 {
+      height: 600px;
+      top: 62px;
     }
   }
 }

@@ -136,7 +136,18 @@ try {
 } catch (error) {}
 
 try {
-  inputTel.addEventListener("keypress", function (e) {
+  inputTel.addEventListener("input", function (e) {
+    if (e.target.value[0] == '8') {
+      var newStr = e.target.value.replace(8, '+7');
+      e.target.value = newStr;
+    }
+
+    if (e.target.value[0] == '7') {
+      var _newStr = e.target.value.replace(7, '+7');
+
+      e.target.value = _newStr;
+    }
+
     if (e.which !== 43 && e.which < 48 || e.which > 57) {
       e.preventDefault();
     }
