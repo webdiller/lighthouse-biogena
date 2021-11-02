@@ -50,6 +50,19 @@ try {
   });
 } catch (error) {}
 
+inputTel.addEventListener("input", function (e) {
+  if (e.target.value[0] == "8") {
+    console.log('match');
+    const newStr = e.target.value.replace(e.target.value[0], "7");
+    e.target.value = newStr;
+  }
+  if (e.target.value[1] == "8") {
+    console.log('match');
+    const newStr = e.target.value.replace(e.target.value[1], "7");
+    e.target.value = newStr;
+  }
+});
+
 try {
   var maskOptions = { mask: '+{*}(000)000-00-00'};
   var mask = IMask(inputTel, maskOptions);
