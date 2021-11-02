@@ -84,6 +84,14 @@
     &.active {
       display: flex;
     }
+    &_2 {
+      .tab-form__view-wrapper {
+        padding-bottom: 108px;
+        @include media("<=768px") {
+          padding: 40px 25px 315px 25px;
+        }
+      }
+    }
   }
 
   &__view-wrapper {
@@ -384,8 +392,9 @@
   &__bg-image {
     position: absolute;
     right: 0;
-    top: 157px;
-    height: 753px;
+    top: 62px;
+    width: 375px;
+    height: auto;
     transition: all 0.5s ease;
     @include media("<=991px") {
       height: auto;
@@ -405,8 +414,13 @@
     &_1 {
     }
     &_2 {
-      height: 600px;
-      top: 62px;
+      max-height: 600px;
+      @include media("<=991px") {
+        right: -70px;
+      }
+      @include media("<=768px") {
+        bottom: -50px;
+      }
     }
   }
 }
