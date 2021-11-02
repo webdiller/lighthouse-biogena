@@ -39,7 +39,7 @@
             <div class="tab-form__views"> 
               <div class="tab-form__view active" data-view-id="1">
                 <div class="tab-form__view-wrapper">
-                  <p class="tab-form__title">Получить консультацию по телефону</p>
+                  <p class="tab-form__title">Получить консультацию по телефону</p><img src="./img/svg/icon-checkbox.svg" alt="icon-agree" width="20">
                   <p class="tab-form__description">
                      Экспресс-консультация эксперта доступна бесплатно для всех посетителей нашего 
                     интернет-магазина. Вы можете задать любой вопрос, касающийся приема 
@@ -50,7 +50,7 @@
                   </p>
                   <form class="tab-form__form">
                     <input class="tab-form__input" placeholder="Ваше имя">
-                    <input class="tab-form__input" placeholder="Номер телефона*" type="tel" id="phone" required minlength="12" maxlength="12" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)">
+                    <input class="tab-form__input" placeholder="Номер телефона*" type="tel" id="phone" value="+7" required minlength="16" maxlength="16" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)">
                     <textarea class="tab-form__textarea" placeholder="Напишите желаемое время звонка и ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий"></textarea>
                     <div class="tab-form__errors"></div>
                     <div class="tab-form__footer">
@@ -85,6 +85,7 @@
         </div>
       </div>
     </main>
+    <script src="https://unpkg.com/imask" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js" integrity="sha512-QMUqEPmhXq1f3DnAVdXvu40C8nbTgxvBGvNruP6RFacy3zWKbNTmx7rdQVVM2gkd2auCWhlPYtcW2tHwzso4SA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/main.js"></script>
   </body>

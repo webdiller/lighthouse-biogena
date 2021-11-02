@@ -10,6 +10,7 @@
                 .tab-form__view(data-view-id="1").active
                     .tab-form__view-wrapper
                         p.tab-form__title Получить консультацию по телефону
+                        img(src='./img/svg/icon-checkbox.svg' alt='icon-agree' width="20")
                         p.tab-form__description 
                             | Экспресс-консультация эксперта доступна бесплатно для всех посетителей нашего 
                             | интернет-магазина. Вы можете задать любой вопрос, касающийся приема 
@@ -27,7 +28,7 @@
                             | #[strong Продолжительность - 15 минут. ]
                         form.tab-form__form
                             input.tab-form__input(placeholder="Ваше имя")
-                            input.tab-form__input(placeholder="Номер телефона*" type="tel" id="phone" required minlength="12" maxlength="12" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)")
+                            input.tab-form__input(placeholder="Номер телефона*" type="tel" id="phone" value="+7" required minlength="16" maxlength="16" data-requiredErrorMessage="Пожалуйста, введите корректный формат номера телефона (например, +7 (999) 999-99-99)")
                             textarea.tab-form__textarea(placeholder="Напишите желаемое время звонка и ваш вопрос*" required data-requiredErrorMessage="Введите ваш вопрос и введите ваш комментарий")
                             .tab-form__errors
                             .tab-form__footer
@@ -58,3 +59,5 @@
                                     a(href="http://biogena.fvds.ru/privacy/").tab-form__agree-link обработки персональных данных.
                                 button.tab-form__footer-btn.tab-form__footer-btn_2(type="submit") Задать ваш вопрос
                         img.tab-form__bg-image.tab-form__bg-image_2(data-tab-image src='./img/tab-bg-image.png' alt='tab-bg-image')
+
+                    

@@ -44,25 +44,18 @@ try {
 } catch (error) {}
 
 try {
-  inputTel.addEventListener("input", function (e) {
-    if (e.target.value[0] == '8') {
-      const newStr = e.target.value.replace(8, '+7');
-      e.target.value = newStr;
-    }
-    if (e.target.value[0] == '7') {
-      const newStr = e.target.value.replace(7, '+7');
-      e.target.value = newStr;
-    }
-    if ((e.which !== 43 && e.which < 48) || e.which > 57) {
-      e.preventDefault();
-    }
-  });
-
   window.intlTelInput(inputTel, {
     customContainer: "tab-form__input-wrapper",
     preferredCountries: ["ru", "by", "kz"],
   });
 } catch (error) {}
+
+try {
+  var maskOptions = { mask: '+{*}(000)000-00-00'};
+  var mask = IMask(inputTel, maskOptions);
+} catch (error) {
+  
+}
 
 try {
   if (forms.length > 0) {
